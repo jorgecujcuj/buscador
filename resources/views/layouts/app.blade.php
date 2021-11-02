@@ -51,6 +51,11 @@
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('nosotros') }}">{{ __('Nosotros') }}</a></li>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('contactos.create') }}">{{ __('Contactos') }}</a></li>
 
+                        @if(Auth::check())
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('datos') }}">{{ __('Datos') }}</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('contactos') }}">{{ __('Mensajes') }}</a></li>
+                        @endif
+
                         @guest
                             @if (Route::has('login'))
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a></li>

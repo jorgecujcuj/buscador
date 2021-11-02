@@ -24,5 +24,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('contactos', App\Http\Controllers\ContactoController::class);
 Route::resource('nosotros', App\Http\Controllers\NosotrosController::class);
+Route::resource('datos', App\Http\Controllers\DatoController::class);
 
 

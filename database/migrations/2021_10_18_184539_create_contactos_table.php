@@ -20,7 +20,7 @@ class CreateContactosTable extends Migration
             $table->string('telefono',12);
             $table->string('mensaje');
             $table->timestamps();
-            $table->unique(['nombre', 'correo', 'telefono']);
+            //$table->unique(['nombre', 'correo', 'telefono']);
         });
     }
 
