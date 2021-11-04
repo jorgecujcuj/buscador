@@ -11,7 +11,7 @@
             <div class="row justify-content-center">
 
                     <span class="login100-form-title p-b-70" style="font-family: Poppins-Bold; font-size: 39px;">
-                        {{ __('Crear Dato') }}
+                        {{ __('Crear un dato del diccionario:') }}
                     </span>
 
                 @includeif('partials.errors')

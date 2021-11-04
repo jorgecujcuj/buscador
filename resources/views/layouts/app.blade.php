@@ -49,8 +49,9 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('/') }}">{{ __('Inicio') }}</a></li>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('nosotros') }}">{{ __('Nosotros') }}</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('contactos.create') }}">{{ __('Contactos') }}</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('crearContactos.create') }}">{{ __('Contactos') }}</a></li>
 
+                            
                         @if(Auth::check())
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('datos') }}">{{ __('Datos') }}</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('contactos') }}">{{ __('Mensajes') }}</a></li>

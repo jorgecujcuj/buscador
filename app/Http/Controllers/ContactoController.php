@@ -11,7 +11,11 @@ use Illuminate\Http\Request;
  */
 class ContactoController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +23,7 @@ class ContactoController extends Controller
      */
     public function index()
     {
-        $contactos = Contacto::paginate();
+        $contactos = Contacto::paginate(5);
 
         return view('contacto.index', compact('contactos'))
             ->with('i', (request()->input('page', 1) - 1) * $contactos->perPage());
@@ -45,15 +49,15 @@ class ContactoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+
         request()->validate(Contacto::$rules);
 
         $contacto = Contacto::create($request->all());
-        
-        $mensaje = "Mensaje enviado con éxito!";
 
-        return redirect()->route('contactos.create')
-            ->with('success', $mensaje);
+        return redirect()->route('contactos.index')
+            ->with('success', 'Mensaje creado con exito.');
+        
     }
 
     /**
@@ -80,6 +84,7 @@ class ContactoController extends Controller
         $contacto = Contacto::find($id);
 
         return view('contacto.edit', compact('contacto'));
+        //return $contacto;
     }
 
     /**
@@ -96,7 +101,7 @@ class ContactoController extends Controller
         $contacto->update($request->all());
 
         return redirect()->route('contactos.index')
-            ->with('success', 'Contacto updated successfully');
+            ->with('success', 'Contacto actualizado con éxito...');
     }
 
     /**
@@ -109,6 +114,6 @@ class ContactoController extends Controller
         $contacto = Contacto::find($id)->delete();
 
         return redirect()->route('contactos.index')
-            ->with('success', 'Contacto deleted successfully');
+            ->with('success', 'Contacto eliminado con éxito...');
     }
 }

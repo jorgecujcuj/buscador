@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Ver Datos</span>
+                            <span class="card-title">Ver el dato del diccionario:</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('datos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('datos.index') }}"> Regresar</a>
                         </div>
                     </div>
 

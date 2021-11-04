@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Actualizar Dato</span>
+                        <span class="card-title">Editar un dato diccionario:</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('datos.update', $dato->id) }}"  role="form" enctype="multipart/form-data">
