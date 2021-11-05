@@ -56,4 +56,5 @@
 
         <div class="box-footer mt20">
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <a class="btn btn-danger" href="{{ route('contactos.index') }}"> Regresar</a>
         </div>

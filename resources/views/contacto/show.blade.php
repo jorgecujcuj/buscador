@@ -14,7 +14,7 @@
                             <span class="card-title">Ver los datos del Contacto</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('contactos.index') }}"> Regresar</a>
+                            <a class="btn btn-danger" href="{{ route('contactos.index') }}"> Regresar</a>
                         </div>
                     </div>
 

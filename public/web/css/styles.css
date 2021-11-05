@@ -11274,8 +11274,10 @@ textarea.form-control-lg {
   }
 }
 .features-icons {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  /*AGREGUE*/
+  padding-top: 3rem;/*8mr*/
+  /*AGREGUE*/
+  padding-bottom: 3rem;
 }
 .features-icons .features-icons-item {
   max-width: 20rem;
@@ -11351,7 +11353,8 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .testimonials {
-  padding-top: 7rem;
+  /*AGREGUE*/
+  /*padding-top: 7rem;*/
   padding-bottom: 7rem;
 }
 .testimonials .testimonial-item {

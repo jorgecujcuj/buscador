@@ -26,5 +26,7 @@ Route::resource('crearContactos', App\Http\Controllers\CreaContactoController::c
 Route::resource('contactos', App\Http\Controllers\ContactoController::class);
 Route::resource('nosotros', App\Http\Controllers\NosotrosController::class);
 Route::resource('datos', App\Http\Controllers\DatoController::class);
+Route::resource('buscas', App\Http\Controllers\BuscaController::class);
+
 
 

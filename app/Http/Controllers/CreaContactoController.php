@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacto;
 use Illuminate\Http\Request;
+use App\Http\Requests\crearContactoCreateRequest;
+
 
 /**
  * Class CreaContactoController
@@ -28,10 +30,10 @@ class CreaContactoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\crearContactoCreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(crearContactoCreateRequest $request)
     {
         request()->validate(Contacto::$rules);
 

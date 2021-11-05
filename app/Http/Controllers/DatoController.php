@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dato;
 use Illuminate\Http\Request;
+use App\Http\Requests\DatoCreateRequest;
 
 /**
  * Class DatoController
@@ -16,11 +17,17 @@ class DatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datos = Dato::paginate();
+        //$datos = Dato::paginate();
+        $texto = trim($request->get('texto'));
+        $datos=Dato::where('tzutujil','LIKE','%'.$texto.'%')
+        ->orwhere('spanish','LIKE','%'.$texto.'%')
+        ->orwhere('ingles','LIKE','%'.$texto.'%')
+        ->orderBy('tzutujil')
+        ->paginate(10);
 
-        return view('dato.index', compact('datos'))
+        return view('dato.index', compact('datos','texto'))
             ->with('i', (request()->input('page', 1) - 1) * $datos->perPage());
     }
 
@@ -41,14 +48,14 @@ class DatoController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DatoCreateRequest $request)
     {
         request()->validate(Dato::$rules);
 
         $dato = Dato::create($request->all());
 
         return redirect()->route('datos.index')
-            ->with('success', 'Dato created successfully.');
+            ->with('success', 'Dato creado con éxito...');
     }
 
     /**
@@ -84,14 +91,14 @@ class DatoController extends Controller
      * @param  Dato $dato
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dato $dato)
+    public function update(DatoCreateRequest $request, Dato $dato)
     {
         request()->validate(Dato::$rules);
 
         $dato->update($request->all());
 
         return redirect()->route('datos.index')
-            ->with('success', 'Dato updated successfully');
+            ->with('success', 'Dato actualizado con éxito...');
     }
 
     /**
@@ -104,6 +111,6 @@ class DatoController extends Controller
         $dato = Dato::find($id)->delete();
 
         return redirect()->route('datos.index')
-            ->with('success', 'Dato deleted successfully');
+            ->with('success', 'Dato eliminado con éxito...');
     }
 }

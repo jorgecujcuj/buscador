@@ -37,7 +37,7 @@
                             <form method="POST" action="{{ route('crearContactos.store') }}"  role="form" enctype="multipart/form-data">
                                 @csrf
 
-                                @include('contacto.form')
+                                @include('crearContacto.form')
 
                             </form>
                         </div>

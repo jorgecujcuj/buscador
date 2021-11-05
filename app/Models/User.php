@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     *@return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function dato()
+    {
+        return $this->hasMany('App\Models\Dato', 'iduser','id');
+    }
+
 }

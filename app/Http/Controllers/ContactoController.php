@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacto;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactoCreateRequest;
+use App\Http\Requests\ContactoEditRequest;
 
 /**
  * Class ContactoController
@@ -48,7 +50,7 @@ class ContactoController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactoCreateRequest $request)
     {   
 
         request()->validate(Contacto::$rules);
@@ -94,7 +96,7 @@ class ContactoController extends Controller
      * @param  Contacto $contacto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contacto $contacto)
+    public function update(ContactoEditRequest $request, Contacto $contacto)
     {
         request()->validate(Contacto::$rules);
 

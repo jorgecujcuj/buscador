@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use \Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * Class Dato
@@ -26,7 +27,6 @@ class Dato extends Model
 		'tzutujil' => 'required',
 		'spanish' => 'required',
 		'ingles' => 'required',
-		'hashtag' => 'required',
     ];
 
     protected $perPage = 20;
@@ -38,6 +38,12 @@ class Dato extends Model
      */
     protected $fillable = ['tzutujil','spanish','ingles','hashtag','iduser'];
 
-
+    /**
+     *@return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id','iduser');
+    }
 
 }
