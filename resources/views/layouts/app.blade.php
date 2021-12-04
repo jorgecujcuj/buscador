@@ -29,6 +29,12 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .active{
+            color: red;
+            font-weight:bold;
+        }
+    </style>
     
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('web/css/styles.css') }}" rel="stylesheet" />
@@ -42,30 +48,30 @@
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
                 
                 <div class="container px-4 px-lg-5">
-                    <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+                    <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 18px;">{{ config('app.name', 'Laravel') }}</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
                         <i class="fas fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('buscas') }}">{{ __('Inicio') }}</a></li>
-                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('nosotros') }}">{{ __('Nosotros') }}</a></li>
-                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('crearContactos.create') }}">{{ __('Contactos') }}</a></li>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('buscas.*') ? 'active' : ''}} " href="{{ url('buscas') }}">{{ __('Diccionario') }}</a></li>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('nosotros.*') ? 'active' : ''}} " href="{{ url('nosotros') }}">{{ __('Nosotros') }}</a></li>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('crearContactos.*') ? 'active' : ''}} " href="{{ route('crearContactos.create') }}">{{ __('Contactos') }}</a></li>
 
                                 
                             @if(Auth::check())
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('datos') }}">{{ __('Datos') }}</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('contactos') }}">{{ __('Mensajes') }}</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('datos.*') ? 'active' : ''}} " href="{{ url('datos') }}">{{ __('Datos') }}</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('contactos.*') ? 'active' : ''}} " href="{{ url('contactos') }}">{{ __('Mensajes') }}</a></li>
                             @endif
 
                             @guest
                                 @if (Route::has('login'))
-                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a></li>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('login') ? 'active' : ''}} " href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a></li>
                                 @endif
 
                                 @if (Route::has('register'))
-                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('register') }}">{{ __('Registrase') }}</a></li>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('register') ? 'active' : ''}} " href="{{ route('register') }}">{{ __('Registrase') }}</a></li>
                                 @endif
                             @else
                             <li class="nav-item dropdown">
@@ -129,7 +135,7 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="{{ url('/') }}">{{ __('Inicio') }}</a></li>
+                            <li class="list-inline-item"><a href="{{ url('/') }}">{{ __('Diccionario') }}</a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="{{ url('nosotros') }}">{{ __('Nosotros') }}</a></li>
                             <li class="list-inline-item">⋅</li>

@@ -21,12 +21,16 @@ class BuscaController extends Controller
 
         $texto = trim($request->get('texto'));
         if($texto == '' ){
-            $texto='...';
-        }
+            $datos=Dato::where('tzutujil','abcdefg')
+            ->orwhere('spanish','abcdefg')
+            ->orwhere('ingles','abcdefg')
+            ->orderBy('tzutujil')->paginate(10);
+        }else{
             $datos=Dato::where('tzutujil','LIKE','%'.$texto.'%')
             ->orwhere('spanish','LIKE','%'.$texto.'%')
             ->orwhere('ingles','LIKE','%'.$texto.'%')
             ->orderBy('tzutujil')->paginate(10);
+        }
 
         return view('busca.index', compact('datos','texto'));
         //return $datos;

@@ -6,13 +6,13 @@
 
 @section('contentuno')
 <!-- Masthead-->
-<header class="masthead" style="background-image: url('img/uno.jpg')">
+<header class="masthead" style="background-image: url('img/cinco.jpg')">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <div class="text-center text-white">
+                        <div class="text-center" style="background-color: rgba(0, 0, 0, .5);">
                             <!-- Page heading-->
-                            <h1 class="mb-5">DICCIONARIO TZ'UTUJIL</h1>
+                            <h1 class="mb-5 text-white">DICCIONARIO TZ'UTUJIL</h1>
 
                     
                         </div>
@@ -41,7 +41,11 @@
                         <div class="card-body">
                                 
                                 <br>
-                                <form action="{{ route('buscas.index') }}" method="get">
+                                <form action="{{ route('buscas.index') }}" method="get" class="form-inline my-2 my-lg-0">
+                                    <button class="btn btn-outline-success mr-sm-2" type="submit">Buscar</button>
+                                    <input class="form-control my-2 my-sm-0" type="search" placeholder="Ingrese una palabra" aria-label="Search" id="texto" name="texto" value="{{ $texto }}">
+                                    
+                                <!--
                                     <div class="form-row">
                                         <div class="col-xs-6 col-md-1">     
                                             <input type="submit" class="btn btn-primary" Value="Buscar">
@@ -51,7 +55,8 @@
                                                 <input type="text" class="form-control" placeholder="Ingrese una palabra" id="texto" name="texto" value="{{ $texto }}">
                                             </div>  
                                             
-                                        </div>        
+                                        </div>
+                                    </div> -->
                                 </form>
                                 
                                 <br>
@@ -64,45 +69,28 @@
 
                             <section class="features-icons bg-light text-center">
                                 <div class="container">
+
+                                        <br>
+                                        @foreach ($datos as $dato)
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class=" mx-auto mb-5 mb-lg-0 mb-lg-3">
                                                     <h3>Tz'utujil</h3>
                                                     <hr style="width:150px; margin: auto; height:5px;"/>
+                                                    <p class="lead mb-0">{{ $dato->tzutujil }}</p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class=" mx-auto mb-5 mb-lg-0 mb-lg-3">
                                                     <h3>Español</h3>
                                                     <hr style="width:150px; margin: auto; height:5px;"/>
+                                                    <p class="lead mb-0">{{ $dato->spanish }}</p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class=" mx-auto mb-0 mb-lg-3">
                                                     <h3>Ingles</h3>
                                                     <hr style="width:150px; margin: auto; height:5px;"/>   
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <br>
-                                        @foreach ($datos as $dato)
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class=" mx-auto mb-5 mb-lg-0 mb-lg-0">
-                                                   
-                                                    <p class="lead mb-0">{{ $dato->tzutujil }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class=" mx-auto mb-5 mb-lg-0 mb-lg-0">
-                                                   
-                                                    <p class="lead mb-0">{{ $dato->spanish }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class=" mx-auto mb-0 mb-lg-0">
-                                               
                                                     <p class="lead mb-0">{{ $dato->ingles }}</p>
                                                 </div>
                                             </div>

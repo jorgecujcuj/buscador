@@ -7,9 +7,9 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <div class="text-center text-white">
+                        <div class="text-center" style="background-color: rgba(0, 0, 0, .5);">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Bienvenidos</h1>
+                            <h1 class="mb-5 text-white">Bienvenidos</h1>
 
                     
                         </div>
@@ -24,7 +24,8 @@
     <div class="row">
         <div class="col-lg-12">
         <div class="testimonial-item mx-auto mb-5 mb-lg-8">
-                <a class="btn btn-primary btn-lg" href="{{ route('buscas.index') }}">{{ __('Iniciar') }}</a>
+                <a class="btn btn-primary btn-lg"
+                href="{{ route('buscas.index') }}">{{ __('INICIAR') }}</a>
                 <br>
         </div>
 

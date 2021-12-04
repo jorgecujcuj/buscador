@@ -6,9 +6,9 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <div class="text-center text-white">
+                        <div class="text-center" style="background-color: rgba(0, 0, 0, .5);">
                             <!-- Page heading-->
-                            <h1 class="mb-4">Sobre Nosotros</h1>
+                            <h1 class="mb-4 text-white">Sobre Nosotros</h1>
 
                             
                         </div>
