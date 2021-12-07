@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 //agregamos los controladores
-
+use App\Http\Controllers\ComentarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Auth::routes();
+
+Route::resource('/', ComentarioController::class)->parameters(['/' => 'comentario'])->names('comentarios');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('crearContactos', App\Http\Controllers\CreaContactoController::class);
@@ -27,6 +29,6 @@ Route::resource('contactos', App\Http\Controllers\ContactoController::class);
 Route::resource('nosotros', App\Http\Controllers\NosotrosController::class);
 Route::resource('datos', App\Http\Controllers\DatoController::class);
 Route::resource('buscas', App\Http\Controllers\BuscaController::class);
-
+Route::resource('comentarios', ComentarioController::class)->parameters(['comentarios' => 'comentario'])->names('comentarios');
 
 

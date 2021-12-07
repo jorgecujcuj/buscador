@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -80,4 +80,17 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('contenttres')
+<section class="bs-calltoaction bs-calltoaction-default text-white text-center" id="signup">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <h2 class="mb-4">Ready to get started?</h2>       
+
+            </div>         
+        </div>
+    </div>
+</section>
 @endsection

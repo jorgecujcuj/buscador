@@ -47,3 +47,16 @@
     </div>
 </div>
 @endsection
+
+@section('contenttres')
+<section class="bs-calltoaction bs-calltoaction-default text-white text-center" id="signup">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <h2 class="mb-4">Ready to get started?</h2>       
+
+            </div>         
+        </div>
+    </div>
+</section>
+@endsection

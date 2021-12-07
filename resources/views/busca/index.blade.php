@@ -42,29 +42,16 @@
                                 
                                 <br>
                                 <form action="{{ route('buscas.index') }}" method="get" class="form-inline my-2 my-lg-0">
-                                    <button class="btn btn-outline-success mr-sm-2" type="submit">Buscar</button>
-                                    <input class="form-control my-2 my-sm-0" type="search" placeholder="Ingrese una palabra" aria-label="Search" id="texto" name="texto" value="{{ $texto }}">
-                                    
-                                <!--
-                                    <div class="form-row">
-                                        <div class="col-xs-6 col-md-1">     
-                                            <input type="submit" class="btn btn-primary" Value="Buscar">
-                                        </div>
-
-                                            <div class="col-xs-12 col-md-4">
-                                                <input type="text" class="form-control" placeholder="Ingrese una palabra" id="texto" name="texto" value="{{ $texto }}">
-                                            </div>  
-                                            
-                                        </div>
-                                    </div> -->
+                                    <button class="btn btn-outline-primary mr-sm-2" type="submit">Buscar</button>
+                                    <input class="form-control my-2 my-sm-0" type="search" placeholder="Ingrese una palabra" aria-label="Search" id="texto" name="texto" value="{{ $texto }}" autofocus>
                                 </form>
                                 
                                 <br>
-                            @if ($message = Session::get('success'))
-                                <div class="alert alert-success">
-                                    <p>{{ $message }}</p>
+                            
+                                <div class="alert alert-success" style="color: black; background-color: rgba(28, 215, 255, .2); border:none;">
+                                    <b><p>{{ $message }}</p></b>
                                 </div>
-                            @endif
+                            
 
 
                             <section class="features-icons bg-light text-center">
@@ -116,5 +103,45 @@
                 </div>
             </div>
         </div>
+</section>
+@endsection
+
+@section('contenttres')
+<section class="bs-calltoaction bs-calltoaction-default text-white text-center" id="signup">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <h2 class="mb-4">Deja un comentario:</h2>       
+
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="container">
+                                <div class="row justify-content-center">
+
+                                            @includeif('partials.errors')
+
+                                            <div class="card-body">
+                                                @if ($message = Session::get('success'))
+                                                    <div class="alert alert-success" style="color: #FFFFFF; background-color: rgba(28, 215, 255, .2); border:none;">
+                                                       <h3> <p>{{ $message }}</p></h3>
+                                                    </div>
+                                                @endif
+
+                                                <form method="POST" action="{{ route('buscas.store') }}"  role="form" enctype="multipart/form-data">
+                                                    @csrf
+
+                                                    @include('comentario.form')
+                                                </form>
+
+                                            </div>
+                                            
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
 </section>
 @endsection

@@ -1,16 +1,20 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Create Comentario
+@endsection
+
 @section('contentuno')
 <!-- Masthead-->
-<header class="masthead" style="background-image: url('img/cuatro.jpg')">
+<header class="masthead" style="background-image: url('img/uno.jpg')">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center" style="background-color: rgba(0, 0, 0, .5);">
                             <!-- Page heading-->
-                            <h1 class="mb-4 text-white">Sobre Nosotros</h1>
+                            <h1 class="mb-5 text-white">Bienvenidos</h1>
 
-                            
+                    
                         </div>
                     </div>
                 </div>
@@ -20,23 +24,23 @@
 
 @section('content')
 
-    <h2 style="font-family: Poppins-Bold; font-size: 39px;">FRANSISCO TRADUCTOR</h2>
-        <p class="lead" style="font-family: Poppins-Bold;">
-        Somos un grupo de persona que nos dedicamos a traducir palabras en el idioma tz'utuji
-        </p>
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-8">
+                <a class="btn btn-primary btn-lg"
+                href="{{ route('buscas.index') }}">{{ __('INICIAR') }}</a>
+                <br>
+        </div>
 
-<!-- Contact section-->
-<div class="container">
-    <div class="row justify-content-center">
-        <img src="{{ asset('img/logo.png')}}" class="img-fluid" alt="Responsive image">
+        <div class="col-lg-12">
+            <img class="img-fluid  mb-0" width="35%" src="{{ asset('img/logo.png')}} " alt="..." />
+        </div>
     </div>
-</div>
 @endsection
-
 
 @section('contentdos')
 <section class="testimonials text-center bg-light">
-            <div class="container">
+            <dsiv class="container">
                 <h2 class="mb-5">Santiago Atitlan...</h2>
                 <div class="row">
                     <div class="col-lg-4">
@@ -67,9 +71,36 @@
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-6">
-                <h2 class="mb-4">Ready to get started?</h2>       
+                <h2 class="mb-4">Deja un comentario:</h2>       
 
-            </div>         
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="container">
+                                <div class="row justify-content-center">
+
+                                            @includeif('partials.errors')
+
+                                            <div class="card-body">
+                                                @if ($message = Session::get('success'))
+                                                    <div class="alert alert-success" style="color: #FFFFFF; background-color: rgba(28, 215, 255, .2); border:none;">
+                                                       <h3> <p>{{ $message }}</p></h3>
+                                                    </div>
+                                                @endif
+
+                                                <form method="POST" action="{{ route('comentarios.store') }}"  role="form" enctype="multipart/form-data">
+                                                    @csrf
+
+                                                    @include('comentario.form')
+                                                </form>
+
+                                            </div>
+                                            
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </div>
     </div>
 </section>

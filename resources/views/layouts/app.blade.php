@@ -43,7 +43,7 @@
 </head>
 <body>
     
-        <!-- Navigation-->
+    <!-- Navigation-->
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
                 
@@ -63,6 +63,7 @@
                             @if(Auth::check())
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('datos.*') ? 'active' : ''}} " href="{{ url('datos') }}">{{ __('Datos') }}</a></li>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('contactos.*') ? 'active' : ''}} " href="{{ url('contactos') }}">{{ __('Mensajes') }}</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 {{request()->routeIs('home') ? 'active' : ''}} " href="{{ url('home') }}">{{ __('Conentarios') }}</a></li>
                             @endif
 
                             @guest
@@ -114,21 +115,10 @@
         </section>
 
         @yield('contentdos')
+
         
-        <section class="bs-calltoaction bs-calltoaction-default text-white text-center" id="signup">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started?</h2>
-
-                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
-                        
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        @yield('contenttres')
+        
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">
