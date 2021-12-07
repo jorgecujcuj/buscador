@@ -5,7 +5,7 @@
             <textarea id="comentario" class="form-control @error('comentario') is-invalid @enderror" name="comentario" required autocomplete="comentario" autofocus>{{ old('comentario') }} </textarea>
 
             @error('comentario')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback" role="alert" style="color: #FFFFFF; background-color: #046ce5; border:none;">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
@@ -19,7 +19,7 @@
             <input id="nombreautor" type="text" class="form-control @error('nombreautor') is-invalid @enderror" name="nombreautor" value="{{ old('nombreautor') }}" required autocomplete="nombreautor" autofocus>
 
             @error('nombreautor')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback" role="alert" style="color: #FFFFFF; background-color: #046ce5; border:none;">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
@@ -33,7 +33,7 @@
             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
             @error('email')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback" role="alert" style="color: #FFFFFF; background-color: #046ce5; border:none;">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror

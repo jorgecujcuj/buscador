@@ -131,7 +131,7 @@
                                                 <form method="POST" action="{{ route('buscas.store') }}"  role="form" enctype="multipart/form-data">
                                                     @csrf
 
-                                                    @include('comentario.form')
+                                                    @include('busca.form')
                                                 </form>
 
                                             </div>

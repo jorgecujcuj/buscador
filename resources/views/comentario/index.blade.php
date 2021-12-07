@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col-lg-12">
         <div class="testimonial-item mx-auto mb-5 mb-lg-8">
-                <a class="btn btn-primary btn-lg"
+                <a class="btn btn-success btn-lg"
                 href="{{ route('buscas.index') }}" autofocus>{{ __('INICIAR') }}</a>
                 <br>
         </div>
