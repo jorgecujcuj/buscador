@@ -25,9 +25,10 @@ class DatoCreateRequest extends FormRequest
     {
         return [
             //
-            'tzutujil' => ['required','regex:/^[\pL\'\"\s\-]+$/u'],
-            'spanish' => ['required','regex:/^[\pL\s\-]+$/u'],
-            'ingles' => ['required','regex:/^[\pL\s\-]+$/u'],
+            'tzutujil' => ['required', 'string', 'max:45'],
+            'spanish' => ['required', 'string', 'max:45'],
+            'ingles' => ['required', 'string', 'max:45'],
+            'hashtag' => ['string', 'max:45'],
         ];
     }
 }

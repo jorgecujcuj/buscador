@@ -24,9 +24,10 @@ class Dato extends Model
 {
     
     static $rules = [
-		'tzutujil' => 'required',
-		'spanish' => 'required',
-		'ingles' => 'required',
+		'tzutujil' => ['required', 'string', 'size:8'],
+		'spanish' => ['required', 'string', 'max:10'],
+		'ingles' => ['required', 'string', 'max:10'],
+    'hashtag' => ['string', 'max:10'],
     ];
 
     protected $perPage = 20;

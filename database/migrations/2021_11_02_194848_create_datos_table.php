@@ -15,10 +15,10 @@ class CreateDatosTable extends Migration
     {
         Schema::create('datos', function (Blueprint $table) {
             $table->id();
-            $table->string('tzutujil',25);
-            $table->string('spanish',25);
-            $table->string('ingles',25);
-            $table->string('hashtag',25);
+            $table->string('tzutujil',50);
+            $table->string('spanish',50);
+            $table->string('ingles',50);
+            $table->string('hashtag',50);
             $table->unsignedBigInteger('iduser')->nullable();
             $table->foreign('iduser')->references('id')->on('users');
             $table->timestamps();

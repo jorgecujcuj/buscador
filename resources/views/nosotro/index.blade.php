@@ -20,9 +20,11 @@
 
 @section('content')
 
-    <h2 style="font-family: Poppins-Bold; font-size: 39px;">FRANSISCO TRADUCTOR</h2>
+    <h2 style="font-family: Poppins-Bold; font-size: 39px;">¿Quiénes somos?</h2>
         <p class="lead" style="font-family: Poppins-Bold;">
-        Somos un grupo de persona que nos dedicamos a traducir palabras en el idioma tz'utuji
+        En el año 2019 surgió una iniciativa de dos jóvenes que residen en Santiago Atitlán, departamento de Sololá en la cual analizaron sobre un proyecto la creación de un diccionario del idioma tz’utujil con el agregado de dos idiomas más el Español e Inglés. Este proyecto se realizó con el objetivo de fortalecer el idioma materno Tz’utujil de nuestra comunidad a través de esta herramienta digital.
+        </p><p class="lead" style="font-family: Poppins-Bold;">
+        También el propósito de este diccionario es facilitar la enseñanza-aprendizaje a los actores educativos de diferentes niveles tal como preprimario, primario, medio y universitario para que ellos desarrollan sus capacidades en la escritura y la pronunciación del idioma Tz’utujil. Este proyecto fue financiado por un amigo extranjero que tiene el interés de apoyar nuestro idioma maya.
         </p>
 
 <!-- Contact section-->
